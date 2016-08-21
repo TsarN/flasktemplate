@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 
-MODEL_TEMPLATE = """# -*- coding: utf-8 -*-
+MODEL_TEMPLATE = '''# -*- coding: utf-8 -*-
 
 from {project_name} import db
 
 class {class_name}(db.Model):
-    \"\"\"Write your docstring here\"\"\"
+    """Write your docstring here"""
     id = db.Column(db.Integer(primary_key=True))
 
     def __init__(self):
         # Write your init code here
+        pass
 
     def __str__(self):
         # Write your string representation code here
-        return \"<{class_name} #%d>\" % id
+        pass
 
-"""
+'''
 
 import os
 import sys
@@ -51,4 +52,4 @@ class NewModel(Command):
 
         app.logger.info("Successfully created model %s at %s" % (module, module_path))
 
-manager.run({'newmodel': NewModel()})
+manager.add_command('newmodel', NewModel())

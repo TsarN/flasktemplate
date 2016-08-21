@@ -34,4 +34,4 @@ class NewModule(Command):
 
         app.logger.info("Successfully created module %s" % module)
 
-manager.run({'newmodule': NewModule()})
+manager.add_command('newmodule', NewModule())
